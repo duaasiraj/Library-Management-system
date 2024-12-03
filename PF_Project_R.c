@@ -11,22 +11,52 @@ struct Book{
 	int available;
 };
 
-int LoadBooks(struct Book *books){
-	int num = 0;
+int BookCount(struct Book **books){
+	int n;
 	char line[416];
 	FILE *fileptr = fopen("Books.txt","r");
 	if(fileptr == NULL){
 		perror("Error opening file");
 	}
-	int a=0;
 	while(fgets(line,sizeof(line),fileptr)!=NULL){
-		sscanf(line, "%[^'\t'] %lld %[^'\t'] %d %[^\t] %d", books[num].name, &books[num].isbn, books[num].author, &books[num].year, books[num].publisher, &books[num].available);
-		num++;
+		n++;
+	}
+	
+	*books = (struct Book*)realloc(*books, n*sizeof(struct Book));
+	
+	fclose(fileptr);
+	return n;
+}
+
+void LoadBooks(struct Book *books, int num){
+	int i;
+	char line[416];
+	FILE *fileptr = fopen("Books.txt","r");
+	if(fileptr == NULL){
+		perror("Error opening file");
+	}
+	for(i=0;i<num;i++){
+		fgets(line,sizeof(line),fileptr);
+		sscanf(line, "%[^'\t'] %lld %[^'\t'] %d %[^\t] %d", books[i].name, &books[i].isbn, books[i].author, &books[i].year, books[i].publisher, &books[i].available);
+
 	}
 	fclose(fileptr);
-	return num;
-
 }
+
+void SaveBooks(struct Book *books, int n){
+    int i;
+    FILE *fileptr = fopen("Books.txt", "w");
+    if(fileptr == NULL){
+        printf("Error opening file\n");
+        return;
+    }
+    for(i = 0; i < n; i++){
+        fprintf(fileptr, "%s\t%lld\t%s\t%d\t%s\t%d\n", books[i].name, books[i].isbn, books[i].author, books[i].year, books[i].publisher, books[i].available);
+    }
+    
+    fclose(fileptr);
+}
+
 
 void displayBooks(struct Book *books, int n){
 	int i;
@@ -36,13 +66,48 @@ void displayBooks(struct Book *books, int n){
 	}
 }
 
-
+int AddBook(struct Book **books, int n){
+    *books = (struct Book*)realloc(*books,(n+1)*sizeof(struct Book));
+    
+    if (*books == NULL) {
+        printf("Memory allocation failed.");
+        return n;
+    }
+    fflush(stdin);
+    printf("Enter book name: ");
+    fgets((*books)[n].name, 150, stdin);
+    (*books)[n].name[strcspn((*books)[n].name,"\n")]='\0';
+    
+    printf("Enter author name: ");
+    fgets((*books)[n].author, 150, stdin);
+    (*books)[n].author[strcspn((*books)[n].author,"\n")]='\0';
+    
+    printf("Enter publisher name: ");
+    fgets((*books)[n].publisher, 150, stdin);
+    (*books)[n].publisher[strcspn((*books)[n].publisher,"\n")]='\0';
+    
+	printf("Enter ISBN: ");
+	scanf("%lld",&(*books)[n].isbn);
+    
+    printf("Enter publishing year: ");
+	scanf("%d",&(*books)[n].year);
+	
+	(*books)[n].available = 1;
+    return n+1;
+}
 
 int main(){
-	int num = 20;
+	int i;
+	int numofBooks;
 	struct Book *books;
-	books = (struct Book*)malloc(num*sizeof(struct Book));
-	int numofBooks = LoadBooks(books);
+	books = (struct Book*)malloc(20*sizeof(struct Book));
+	if(books==NULL){
+		printf("Memory Allocation Failed.");
+	}
+	numofBooks = BookCount(&books);
+	
+	LoadBooks(books, numofBooks);
 	displayBooks(books,numofBooks);
-
+	SaveBooks(books,numofBooks);
+	free(books);
 }
