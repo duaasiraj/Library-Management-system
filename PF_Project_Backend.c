@@ -10,6 +10,7 @@ struct Book{
 	char name[150];
 	long long isbn;
 	char author[150];
+	char genre[100];
 	char publisher[100];
 	int year;
 	int available;
@@ -66,7 +67,7 @@ void LoadBooks(struct Book *books, int num){
 	}
 	for(i=0;i<num;i++){
 		fgets(line,sizeof(line),fileptr);
-		sscanf(line, "%[^'\t'] %lld %[^'\t'] %d %[^\t] %d", books[i].name, &books[i].isbn, books[i].author, &books[i].year, books[i].publisher, &books[i].available);
+		sscanf(line, "%[^'\t'] %lld %[^'\t'] %d %[^\t] %[^\t] %d", books[i].name, &books[i].isbn, books[i].author, &books[i].year, books[i].publisher, books[i].genre, &books[i].available);
 
 	}
 	fclose(fileptr);
@@ -81,7 +82,7 @@ void SaveBooks(struct Book *books, int n){
         return;
     }
     for(i = 0; i < n; i++){
-        fprintf(fileptr, "%s\t%lld\t%s\t%d\t%s\t%d\n", books[i].name, books[i].isbn, books[i].author, books[i].year, books[i].publisher, books[i].available);
+        fprintf(fileptr, "%s\t%lld\t%s\t%d\t%s\t%s\t%d\n", books[i].name, books[i].isbn, books[i].author, books[i].year, books[i].publisher, books[i].genre, books[i].available);
     }
     
     fclose(fileptr);
@@ -92,7 +93,7 @@ void displayBooks(struct Book *books, int n){
 	int i;
 	
 	for(i=0;i<n;i++){
-		printf("%-30s\t %lld\t %-20s\t %d\t %-30s\t %d\n",books[i].name,books[i].isbn,books[i].author,books[i].year,books[i].publisher,books[i].available);
+		printf("%-30s\t %lld\t %-20s\t %d\t %-30s\t %-20s\t %d\n",books[i].name,books[i].isbn,books[i].author,books[i].year,books[i].publisher,books[i].genre,books[i].available);
 	}
 }
 
@@ -134,6 +135,10 @@ int AddBook(struct Book **books, int n){
     printf("Enter publisher name: ");
     fgets((*books)[n].publisher,150,stdin);
     (*books)[n].publisher[strcspn((*books)[n].publisher,"\n")]='\0';
+    
+    printf("Enter Genre: ");
+    fgets((*books)[n].genre,100,stdin);
+    (*books)[n].genre[strcspn((*books)[n].genre,"\n")]='\0';
     
     printf("Enter publishing year: ");
 	scanf("%d",&(*books)[n].year);
@@ -343,7 +348,6 @@ int main(){
 	numofUsers = UserCount(&users); //IMPORTANT MAIN
 	LoadUsers(users,numofUsers); //IMPORTANT MAIN
 //end of back-end initialization	
-	
 	
 	
 	
