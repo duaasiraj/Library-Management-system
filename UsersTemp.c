@@ -191,14 +191,14 @@ void CalculateFines(struct User *users, int n){
 
 
 int main(){
-	struct User *users = (struct User*)malloc(5*sizeof(struct User));
+	struct User *users = (struct User*)malloc(5*sizeof(struct User)); //IMPORTANT MAIN
 	int numofUsers, i;
 
-	numofUsers = UserCount(&users);
-	LoadUsers(users,numofUsers);
+	numofUsers = UserCount(&users); //IMPORTANT MAIN
+	LoadUsers(users,numofUsers); //IMPORTANT MAIN
 
 	displayUsers(users,numofUsers);
 	
-	SaveUsers(users,numofUsers);
-	free(users);
+	SaveUsers(users,numofUsers); //IMPORTANT MAIN
+	free(users); //IMPORTANT MAIN
 }

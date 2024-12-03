@@ -118,15 +118,15 @@ int AddBook(struct Book **books, int n){
 }
 
 int main(){
-	int numofBooks;
-	struct Book *books;
-	books = (struct Book*)malloc(20*sizeof(struct Book));
+	int numofBooks; //IMPORTANT MAIN
+	struct Book *books; //IMPORTANT MAIN
+	books = (struct Book*)malloc(20*sizeof(struct Book));// IMPORTANT MAIN
 	if(books==NULL){
 		printf("Memory Allocation Failed.");
-	}
-	numofBooks = BookCount(&books);
-	LoadBooks(books, numofBooks);
+	}//IMPORTANT MAIN
+	numofBooks = BookCount(&books);//IMPORTANT MAIN
+	LoadBooks(books, numofBooks);//IMPORTANT MAIN
 	displayBooks(books,numofBooks);
-	SaveBooks(books,numofBooks);
-	free(books);
+	SaveBooks(books,numofBooks);//IMPORTANT MAIN
+	free(books);//IMPORTANT MAIN
 }
