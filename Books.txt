@@ -1,20 +1,20 @@
-The Catcher in the Rye	9780316769488	J.D. Salinger	1951	Little, Brown and Co.	Fiction	1
+The Catcher in the Rye	9780316769488	J.D. Salinger	1951	Little, Brown and Co.	Fiction	0
 To Kill a Mockingbird	9780061120084	Harper Lee	1960	J.B. Lippincott & Co.	Fiction	1
-1984	9780451524935	George Orwell	1949	Secker & Warburg	Dystopian Fiction	1
+1984	9780451524935	George Orwell	1949	Secker & Warburg	Dystopian Fiction	0
 Pride and Prejudice	9781853260001	Jane Austen	1813	T. Egerton	Romance	1
 The Great Gatsby	9780743273565	F. Scott Fitzgerald	1925	Charles Scribner's Sons	Fiction	1
-Moby-Dick	9781851244422	Herman Melville	1851	Harper & Brothers	Adventure	1
+Moby-Dick	9781851244422	Herman Melville	1851	Harper & Brothers	Adventure	0
 War and Peace	9780140447934	Leo Tolstoy	1869	The Russian Messenger	Historical Fiction	1
-Crime and Punishment	9780140449136	Fyodor Dostoevsky	1866	The Russian Messenger	Psychological Fiction	1
-Don Quixote	9780060934347	Miguel de Cervantes	1605	HarperCollins	Classics	1
-Brave New World	9780060850524	Aldous Huxley	1932	Harper & Row	Dystopian Fiction	1
+Crime and Punishment	9780140449136	Fyodor Dostoevsky	1866	The Russian Messenger	Psychological Fiction	0
+Don Quixote	9780060934347	Miguel de Cervantes	1605	HarperCollins	Classics	0
+Brave New World	9780060850524	Aldous Huxley	1932	Harper & Row	Dystopian Fiction	0
 The Hobbit	9780345339683	J.R.R. Tolkien	1937	Houghton Mifflin	Fantasy	1
 Fahrenheit 451	9781451673319	Ray Bradbury	1953	Ballantine Books	Dystopian Fiction	1
 The Lord of the Rings	9780618640157	J.R.R. Tolkien	1954	Houghton Mifflin	Fantasy	1
 Wuthering Heights	9780141439556	Emily Brontë	1847	Thomas Cautley Newby	Gothic Fiction	1
-The Picture of Dorian Gray	9780141439570	Oscar Wilde	1890	Ward, Lock & Co.	Gothic Fiction	1
+The Picture of Dorian Gray	9780141439570	Oscar Wilde	1890	Ward, Lock & Co.	Gothic Fiction	0
 The Bell Jar	9780061148480	Sylvia Plath	1963	Harper & Row	Psychological Fiction	1
 Frankenstein	9780486282114	Mary Shelley	1818	Lackington, Allen, & Co.	Gothic Fiction	1
 The Divine Comedy	9780140448955	Dante Alighieri	1320	Penguin Classics	Philosophical Poetry	1
-Dracula	9780141439847	Bram Stoker	1897	Archibald Constable	Gothic Fiction	1
+Dracula	9780141439847	Bram Stoker	1897	Archibald Constable	Gothic Fiction	0
 The Old Man and the Sea	9780684801223	Ernest Hemingway	1952	Scribner's Sons	Literary Fiction	1
