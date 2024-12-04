@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
+#include <conio.h>
 
 
 //Start of structures
@@ -42,10 +43,6 @@ struct User{
 };
 
 //End of structures
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
 
 // Prototypes for all functions
 struct Login;
@@ -93,7 +90,7 @@ void CalculateFines(struct User *users, int n);
 
 // Utility function to clear the screen
 void ClearScreen() {
-    printf("\033[H\033[J"); // ANSI escape code to clear the console screen
+system("cls");
 }
 
 // Main Function
