@@ -42,6 +42,16 @@ struct User{
 };
 
 //End of structures
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+// Prototypes for all functions
+struct Login;
+struct Book;
+struct BooksBorrowed;
+struct User;
 void Displaybooks(struct Book *books, int num);
 void sortNameAsc(struct Book *books, int num);
 void sortPublisherAsc(struct Book *books, int num);
@@ -81,8 +91,7 @@ void displayBooks(struct Book *books, int n);
 int AddBook(struct Book **books, int n);
 void CalculateFines(struct User *users, int n);
 
-
-//Start of functions
+// Utility function to clear the screen
 void ClearScreen() {
     printf("\033[H\033[J"); // ANSI escape code to clear the console screen
 }
@@ -129,8 +138,9 @@ int main() {
                 printf("1. View Overdue Books\n");
                 printf("2. Calculate Fines\n");
                 printf("3. Add Book\n");
-                printf("4. Display Books\n");
-                printf("5. Logout\n");
+                printf("4. Display All Books\n");
+                printf("5. Display All Users\n");
+                printf("6. Logout\n");
                 printf("Select an option: ");
                 int librarianChoice;
                 scanf("%d", &librarianChoice);
@@ -146,6 +156,8 @@ int main() {
                 } else if (librarianChoice == 4) {
                     displayBooks(books, numBooks);
                 } else if (librarianChoice == 5) {
+                    displayUsers(users, numUsers);
+                } else if (librarianChoice == 6) {
                     break;
                 } else {
                     printf("Invalid choice.\n");
@@ -253,6 +265,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
