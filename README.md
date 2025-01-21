@@ -32,11 +32,11 @@ Welcome to the Library Management System, a C-based application designed to stre
    - Contains files used during testing and planning phases.
    - Includes experimental or failed versions of the system.
 
-2. **`Final_Main/`**:
+2. **`Final main/`**:
    - Houses the finalized and fully functional files of the library management system.
 
 ### Key Files
-- **Main Program File**: The entry point of the system is located in `Final_Main/`.
+- **Main Program File**: The entry point of the system is located in `Final main/`.
 - **Data Files**:
   - User records
   - Book (inventory)
